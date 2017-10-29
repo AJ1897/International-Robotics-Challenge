@@ -9,13 +9,13 @@
 #define ledb 5
 #define ledc 3
 
-byte mlpwm = 0, mrpwm = 0, mls = 200, mrs = 200, mlt = 215, mrt = 215;
+byte mlpwm = 0, mrpwm = 0, mls = 170, mrs = 170, mlt = 170, mrt = 170;
 int reading[7];
 byte dread[7];
-int err = 0, perr = 0, derr = 0, corr = 0, sen_thr = 400;
-const byte  kp = 25, kd = 15, lt_ov = 100, rt_ov = 100, tback_ov=500;
+int err = 0, perr = 0, derr = 0, corr = 0, sen_thr = 500;
+const byte  kp = 30, kd = 20, lt_ov = 100, rt_ov = 100, tback_ov=500;
 long long int t = 0, tst = 0, t_back = 0, tl = 0, distance = 0;
-const byte line_ov = 160;
+const byte line_ov = 40;
 int end_dry = 0, wsum = 0, sum = 0;
 int D = 0;
 int i = 1, j = 1, l = 0, ua = 0, uat = 0, cl = 0, xf = 0, yf = 0,ij=0,ifxy=0,dirf=0,prv_dir=0;
@@ -860,7 +860,7 @@ void dry_run() {
     digitalWrite(ledr, HIGH);
     digitalWrite(ledg, HIGH);
     digitalWrite(ledb, HIGH);
-    while (millis() < t + 700) {
+    while (millis() < t + 400) {
       //digitalWrite(ledr, LOW);
       //digitalWrite(ledg, LOW);
       //digitalWrite(ledb, LOW);
